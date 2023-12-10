@@ -1,0 +1,23 @@
+<script>
+$(document).ready(function() {
+
+    $.ajax({
+        type: "POST",
+        url: "send_email.php", 
+        data: {
+            sender_email: senderEmail,
+            password: password,
+            recipient_email: recipientEmail,
+            subject: subject,
+            body: body
+        },
+        success: function(response) {
+            console.log(response);
+        },
+        error: function(error) {
+            console.error("Eroare la trimiterea e-mailului:", error);
+        }
+    });
+});
+</script>
+

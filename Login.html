@@ -1,0 +1,45 @@
+
+<div id="loginForm">
+    <h2>Login</h2>
+    <label for="username">Utilizator:</label>
+    <input type="text" id="username" required>
+    <br>
+    <label for="password">Parolă:</label>
+    <input type="password" id="password" required>
+    <br>
+    <button onclick="login()">Autentificare</button>
+    <br>
+    <a href="#" onclick="showForgotPasswordForm()">Ai uitat parola?</a>
+</div>
+
+<div id="forgotPasswordForm" style="display: none;">
+    <h2>Recuperare Parolă</h2>
+    <label for="forgotEmail">Adresa de email:</label>
+    <input type="email" id="forgotEmail" required>
+    <br>
+    <button onclick="sendPasswordResetEmail()">Trimite email de resetare</button>
+    <br>
+    <a href="#" onclick="showLoginForm()">Înapoi la autentificare</a>
+</div>
+
+<script>
+function login() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+}
+
+function showForgotPasswordForm() {
+    document.getElementById("loginForm").style.display = "none";
+    document.getElementById("forgotPasswordForm").style.display = "block";
+}
+
+function showLoginForm() {
+    document.getElementById("loginForm").style.display = "block";
+    document.getElementById("forgotPasswordForm").style.display = "none";
+}
+
+function sendPasswordResetEmail() {
+    var email = document.getElementById("forgotEmail").value;
+}
+</script>
+
